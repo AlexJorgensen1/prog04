@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let redCount = 0, greenCount = 0, blueCount = 0;
+        function changeColor(color){
+            document.getElementById("background").style.background = color;
+            if (color == 'red'){
+                ++redCount;
+                document.getElementById('redCount').innerText = redCount;
+            }
+            if (color == 'green'){
+                ++greenCount;
+                document.getElementById('greenCount').innerText = greenCount;
+            }
+            if (color == 'blue'){
+                ++blueCount;
+                document.getElementById('blueCount').innerText = blueCount;
+            }
+            if (color == 'white'){
+                redCount = 0;
+                greenCount = 0;
+                blueCount = 0;
+                document.getElementById('redCount').innerText = redCount;
+                document.getElementById('greenCount').innerText = greenCount;
+                document.getElementById('blueCount').innerText = blueCount;
+            }
+        }
+    </script>
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body id="background">
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="GroupCSS1.html">GroupCSS1</a></li>
+                <li><a href="GroupCSS2.html">GroupCSS2</a></li>
+                <li><a href="layout.html">Layout</a></li>
+                <li><a href="prog04.html">Color Changing Assignment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <button style="color: red" onClick="changeColor('red')">RED <span id="redCount">0</span></button>
+    <button style="color: green" onClick="changeColor('green')">GREEN <span id="greenCount">0</span></button>
+    <button style="color: blue" onClick="changeColor('blue')">BLUE <span id="blueCount">0</span></button>
+    <button onClick="changeColor('white')">RESET</button>
+
+</body>
+</html>
